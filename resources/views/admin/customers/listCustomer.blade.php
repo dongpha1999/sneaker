@@ -14,7 +14,7 @@
             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                 <thead>
                     <tr align="center">
-                        <th>Số thứ tự</th>
+                        <th>#</th>
                         <th>Tài khoản người dùng</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>

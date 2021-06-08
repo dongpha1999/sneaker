@@ -74,7 +74,7 @@
             </div>
             <div class="menu-about">
                 <div class="heading-lg mb-2">
-                    <h1>CHI TIẾT SẢN PHẨM</h1>
+                    <h1>MÔ TẢ SẢN PHẨM</h1>
                 </div>
                 <div class="content-describe mb-5 text-justify">
                     {!! $product['description'] !!}

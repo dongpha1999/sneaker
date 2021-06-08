@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2021 at 02:21 PM
+-- Generation Time: Jun 08, 2021 at 05:44 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.2.34
 
@@ -203,7 +203,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `username`, `password`, `email`, `phone`, `sex`, `city_id`, `district_id`, `ward_id`, `admin`, `created_at`, `updated_at`, `status`, `verify`) VALUES
-(16, 'luan25092000', '$2y$10$SlncmMqLz2BQS.6gZEvK9.iabVRFYq6NFqKA5NDnP.NaBNfekOs0G', 'nguyenhuuluan17@gmail.com', '0813798168', 'female', '27', '261', '09391', 0, '2021-05-25 22:28:50', '2021-05-26 05:52:18', 1, 1);
+(16, 'luan25092000', '$2y$10$SlncmMqLz2BQS.6gZEvK9.iabVRFYq6NFqKA5NDnP.NaBNfekOs0G', 'nguyenhuuluan17@gmail.com', '0813798168', 'female', '27', '261', '09391', 0, '2021-05-25 22:28:50', '2021-05-26 05:52:18', 1, 1),
+(17, 'dongpha', '$2y$10$oWLHNN5jjrm5aa7xkO/l8evvKTZmm249tG8P/GUrDi15OBsG3o4PK', 'dongpha5656@gmail.com', '0903586720', 'male', '20', '185', '06364', 0, '2021-05-27 09:58:56', '2021-05-27 16:58:56', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -905,16 +906,21 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `title`, `price`, `category_id`, `image_path`, `created_at`, `updated_at`, `description`, `brand_id`, `quantity`, `status`, `sku`) VALUES
-(15, 'Giày 1', 20000, 6, 'Giày 1.jpg', '2021-05-25 10:09:35', '2021-05-25 17:09:35', '<p>Tốt</p>', 10, 100, 1, 'g1'),
-(16, 'Giày 2', 20000, 6, 'Giày 2.jpg', '2021-05-25 10:10:05', '2021-05-26 11:51:40', '<p>Khá</p>', 13, 198, 1, 'g2'),
-(17, 'Giày 3', 30000, 7, 'Giày 3.jpg', '2021-05-25 10:10:42', '2021-05-25 17:10:42', '<p>Trung Bình</p>', 13, 300, 1, 'g3'),
-(18, 'Giày 4', 40000, 8, 'Giày 4.jpg', '2021-05-25 10:11:14', '2021-05-25 17:11:14', '<p>Khá</p>', 12, 200, 1, 'g4'),
-(19, 'Giày 5', 20000, 8, 'Giày 5.jpg', '2021-05-25 10:11:41', '2021-05-25 17:11:41', '<p>Khá</p>', 12, 100, 1, 'g5'),
-(20, 'Giày 6', 40000, 8, 'Giày 6.webp', '2021-05-25 10:12:37', '2021-05-25 17:12:37', '<p>Khá</p>', 14, 300, 1, 'g6'),
-(21, 'Giày 7', 20000, 7, 'Giày 7.jpg', '2021-05-25 10:14:07', '2021-05-25 17:14:07', '<p>Trung Bình</p>', 15, 100, 1, 'g7'),
-(22, 'Giày 8', 30000, 8, 'Giày 8.jpg', '2021-05-25 10:14:48', '2021-05-25 17:14:48', '<p>Khá</p>', 13, 100, 1, 'g8'),
-(23, 'Giày 9', 40000, 8, 'Giày 9.jpg', '2021-05-25 10:15:36', '2021-05-25 17:15:36', '<p>Tốt</p>', 14, 200, 1, 'g9'),
-(24, 'Giày 10', 30000, 7, 'Giày 10.png', '2021-05-25 10:16:32', '2021-05-25 17:16:32', '<p>Khá</p>', 11, 100, 1, 'g10');
+(15, 'Giày 1', 20000, 6, 'Giày 1.jpg', '2021-05-25 10:09:35', '2021-06-08 03:37:47', '<p>- Hàng chính hãng</p>\r\n\r\n<p>- Giao hàng Toàn Quốc</p>\r\n\r\n<p>- Thanh toán khi nhận hàng</p>\r\n\r\n<p>- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p>- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p>- Giao hàng Nhanh 60p tại Sài Gòn</p>', 10, 100, 1, 'g1'),
+(16, 'Giày 2', 20000, 6, 'Giày 2.jpg', '2021-05-25 10:10:05', '2021-06-08 03:40:08', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 13, 198, 1, 'g2'),
+(17, 'Giày 3', 30000, 7, 'Giày 3.jpg', '2021-05-25 10:10:42', '2021-06-08 03:40:26', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 13, 300, 1, 'g3'),
+(18, 'Giày 4', 40000, 8, 'Giày 4.jpg', '2021-05-25 10:11:14', '2021-06-08 03:40:37', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 12, 200, 1, 'g4'),
+(19, 'Giày 5', 20000, 8, 'Giày 5.jpg', '2021-05-25 10:11:41', '2021-06-08 03:40:51', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 12, 100, 1, 'g5'),
+(20, 'Giày 6', 40000, 8, 'Giày 6.webp', '2021-05-25 10:12:37', '2021-06-08 03:41:05', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 14, 300, 1, 'g6'),
+(21, 'Giày 7', 20000, 7, 'Giày 7.jpg', '2021-05-25 10:14:07', '2021-06-08 03:41:16', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 15, 100, 1, 'g7'),
+(22, 'Giày 8', 30000, 8, 'Giày 8.jpg', '2021-05-25 10:14:48', '2021-06-08 03:42:02', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 13, 100, 1, 'g8'),
+(23, 'Giày 9', 40000, 8, 'Giày 9.jpg', '2021-05-25 10:15:36', '2021-06-08 03:42:13', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 14, 200, 1, 'g9'),
+(24, 'Giày 10', 30000, 7, 'Giày 10.png', '2021-05-25 10:16:32', '2021-06-08 03:42:24', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 11, 100, 1, 'g10'),
+(25, 'Giày 11', 10000, 6, 'Giày 11.jpg', '2021-06-07 20:18:36', '2021-06-08 03:42:40', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 10, 123, 1, 'g11'),
+(26, 'Giày 12', 50000, 6, 'Giày 12.jpg', '2021-06-07 20:22:00', '2021-06-08 03:42:55', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 15, 1000, 1, 'g12'),
+(27, 'Giày 13', 45000, 6, 'Giày 13.jpg', '2021-06-07 20:26:59', '2021-06-08 03:43:08', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 13, 2000, 1, 'g13'),
+(28, 'Giày 14', 20000, 8, 'Giày 14.jpg', '2021-06-07 20:28:54', '2021-06-08 03:43:23', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 11, 3000, 1, 'g14'),
+(29, 'Giày 15', 40000, 7, 'Giày 15.jpg', '2021-06-07 20:33:44', '2021-06-08 03:43:37', '<p style=\"text-align:justify\">- Hàng chính hãng</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Toàn Quốc</p>\r\n\r\n<p style=\"text-align:justify\">- Thanh toán khi nhận hàng</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành chính hãng trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Bảo hành keo, chỉ trọn đời sản phẩm</p>\r\n\r\n<p style=\"text-align:justify\">- Giao hàng Nhanh 60p tại Sài Gòn</p>', 10, 200, 1, 'g15');
 
 -- --------------------------------------------------------
 
@@ -11679,7 +11685,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `orders`
@@ -11691,7 +11697,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `slides`

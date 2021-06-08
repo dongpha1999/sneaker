@@ -5,7 +5,7 @@
 @section('content')
     <div class="row banner-container">
         <div class="col-lg-9">
-            <div id="banner" class="carousel slide" data-ride="carousel">
+            <div id="banner" class="carousel slide mt-4 mb-4" data-ride="carousel">
                 <!-- Indicators -->
                 <ul class="carousel-indicators">
                     @foreach ($slides as $slide)
@@ -24,11 +24,11 @@
                     @foreach ($slides as $slide)
                         @if ($slide->id === $slideFirst)
                             <div class="carousel-item active">
-                                <img src="{{ asset('storage/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }}>
+                                <img src="{{ asset('storage/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }} width="345" height="155">
                             </div>
                         @else
                             <div class="carousel-item">
-                                <img src="{{ asset('storage/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }}>
+                                <img src="{{ asset('storage/images/slides/'.$slide->image_path) }}" alt={{ $slide->id }} width="345" height="155">
                             </div>
                         @endif
                     @endforeach
