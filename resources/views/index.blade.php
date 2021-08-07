@@ -76,20 +76,22 @@
     @csrf
     <div class="row mb-4" id="product-container">
         @foreach ($products as $product)
-            <div class="col-lg-3 mb-4">
-                <div class="product-item-box">
-                    <div class="product-item">
-                        <div class="image">
-                            <a href="{{ route('product.detail',['id' => $product->id]) }}">
-                                <img src="{{ asset('storage/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
-                            </a>
-                            <a href="{{ route('product.detail',['id' => $product->id]) }}" class="more-info"><i class="fas fa-search"></i> XEM THÊM</a>
+            @if ($product->quantity > 0)
+                <div class="col-lg-3 mb-4">
+                    <div class="product-item-box">
+                        <div class="product-item">
+                            <div class="image">
+                                <a href="{{ route('product.detail',['id' => $product->id]) }}">
+                                    <img src="{{ asset('storage/images/products/'.$product->image_path) }}" alt="{{ $product->id }}" width="100%" height="100%" name="product-image" class="product-image" />
+                                </a>
+                                <a href="{{ route('product.detail',['id' => $product->id]) }}" class="more-info"><i class="fas fa-search"></i> XEM THÊM</a>
+                            </div>
+                            <a href="{{ route('product.detail',['id' => $product->id]) }}" class="product-name mt-4">{{ $product->title }}</a>
+                            <div class="price-new" name="price-new">{{ number_format($product->price,-3,',',',') }} VND</div>
                         </div>
-                        <a href="{{ route('product.detail',['id' => $product->id]) }}" class="product-name mt-4">{{ $product->title }}</a>
-                        <div class="price-new" name="price-new">{{ number_format($product->price,-3,',',',') }} VND</div>
                     </div>
-                </div>
-            </div>
+                </div> 
+            @endif
         @endforeach
     </div>
     {{ $products->links() }}

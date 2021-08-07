@@ -120,6 +120,14 @@ class ProductController extends Controller
     {
         
         $product = Product::find($id);
+        if ($request->hasFile('image')) {
+            //  Let's do everything here
+            if ($request->file('image')->isValid()) {
+                $extension = $request->image->extension();
+                $request->image->storeAs('/public/images/products',  $request->input('title').".".$extension);
+                $product->image_path = $request->input('title').".".$extension;
+            }
+        }  
         $product->title = $request->input('title');
         $product->price = $request->input('price');
         $product->category_id = $request->input('category_id');
@@ -128,7 +136,7 @@ class ProductController extends Controller
         $product->quantity = $request->input('quantity');
         $product->sku = $request->input('sku');
         $product->save();
-        return redirect()->route('product.list')->with("success","Sửa thành công");
+        return redirect()->route('product.edit.form',['id' => $product['id']])->with("success","Sửa thành công");
     }
 
     /**
@@ -242,6 +250,12 @@ class ProductController extends Controller
             where u.city_id = c.matp and u.district_id = d.maqh and u.ward_id = w.xaid and id = ?',[$id]
         );
         $cart = new Cart($oldCart);
+        foreach($cart->items as $key => $value){
+            $product = Product::find($key);
+            if($product['quantity'] < $value['qty']){
+                return redirect()->back()->with('invalid','Sản phẩm "'.$product['title'].'" này hiện tại chỉ còn lại '.$product['quantity'].' mặt hàng, không đủ cho bạn mua hàng.');
+            }
+        }
         return view('checkout', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice, 'customer' => $customer[0]]);
     }
 

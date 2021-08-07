@@ -35,9 +35,12 @@
                     </tr>
                 </thead>
                 <tbody align="center">
+                    @php
+                        $count = 1;
+                    @endphp
                     @foreach ($slides as $slide)
                         <tr>
-                            <td>{{ $slide['id'] }}</td>
+                            <td>{{ $count }}</td>
                             <td><img src="{{ asset('storage/images/slides/'.$slide['image_path']) }}" width=60px ></td>
                             <td>{{ $slide['name'] }}</td>
                             <td>{{ $slide['sort_order'] }}</td>
@@ -49,12 +52,15 @@
                                 @endif
                             </td>
                             <td>
-                                <a href="{{ route('slide.delete',['id'=>$slide['id']]) }}"><i class="fa fa-times" aria-hidden="true"></i></a>
+                                <a href="{{ route('slide.delete',['id'=>$slide['id']]) }}" onclick="return confirm('Bạn có muốn xóa slide này ?');"><i class="fa fa-times" aria-hidden="true"></i></a>
                                 <a href="{{ route('slide.edit.form',['id'=>$slide['id']]) }}" style="margin:0 1rem;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 <a href="{{ route('slide.disable',['id'=>$slide['id']]) }}" style="margin-right:1rem;"><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 <a href="{{ route('slide.enable',['id'=>$slide['id']]) }}"><i class="fa fa-check-square" aria-hidden="true"></i></i></a>
                             </td>
                         </tr>
+                        @php
+                            $count++;
+                        @endphp
                     @endforeach
                 </tbody>
             </table>

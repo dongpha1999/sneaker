@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\Order;
 
 class CustomerController extends Controller
 {
@@ -81,7 +82,14 @@ class CustomerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $customer = Customer::find($id);
+        $check = Order::where('customer_id',$id)->get();
+        if(count($check) > 0){
+            return redirect()->back()->with('invalid','Bạn muốn xóa tài khoản này trước tiên bạn phải xóa đi các thông tin đơn hàng của khách hàng này trước.');
+        }else{
+            $customer->delete();
+            return redirect()->back()->with('success','Xóa tài khoản thành công.');
+        }
     }
 
          /**

@@ -34,9 +34,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php
+                            $count = 1;
+                        @endphp
                         @foreach ($orders as $row)
                             <tr>
-                                <td>{{ $row->order_code }}</td>
+                                <td>{{ $count }}</td>
                                 <td>{{ $row->username }}</td>
                                 <td>{{ $row->total_money }}</td>
                                 <td>
@@ -54,6 +57,9 @@
                                     <a href="{{ route('order.see',['code' => $row->order_code]) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
+                            @php
+                                $count++;
+                            @endphp
                         @endforeach
                     </tbody>
                 </table>

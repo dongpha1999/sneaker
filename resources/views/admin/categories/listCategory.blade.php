@@ -33,9 +33,12 @@
                     </tr>
                 </thead>
                 <tbody align="center">
+                    @php
+                        $count = 1;
+                    @endphp
                     @foreach ($categories as $category)
                         <tr>
-                            <td>{{ $category['id'] }}</td>
+                            <td>{{ $count }}</td>
                             <td>{{ $category['title'] }}</td>
                             <td>
                                 @if ($category['status'] === 1)
@@ -45,25 +48,15 @@
                                 @endif
                             </td>
                             <td>
-                                <a data-href="{{ route('category.delete',['id'=>$category['id']]) }}" data-target="#confirm-delete" data-toggle="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                Bạn có chắc chắn sẽ muốn xóa thương hiệu này ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a class="btn btn-danger btn-ok">Xóa</a>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <a href="{{ route('category.delete',['id'=>$category['id']]) }}" onclick="return confirm('Bạn có muốn xóa danh mục này ?');"><i class="fa fa-times" aria-hidden="true"></i></a>
                                 <a href="{{ route('category.edit.form',['id'=>$category['id']]) }}" style="margin:0 1rem;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 <a href="{{ route('category.disable',['id'=>$category['id']]) }}" style="margin-right:1rem;"><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 <a href="{{ route('category.enable',['id'=>$category['id']]) }}"><i class="fa fa-check-square" aria-hidden="true"></i></i></a>
                             </td>
                         </tr>
+                        @php
+                            $count++;
+                        @endphp
                     @endforeach
                 </tbody>
             </table>

@@ -18,6 +18,18 @@
          <h1>GIỎ HÀNG CỦA TÔI</h1>
     </div>
     <div class="cart-block">
+        @if(Session::has('invalid'))
+        <div class="alert alert-danger alert-dismissible mt-2">
+                <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{Session::get('invalid')}}
+        </div>
+    @endif
+    @if(Session::has('success'))
+        <div class="alert alert-success alert-dismissible mt-2">
+                <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                {{Session::get('success')}}
+        </div>
+    @endif
         <div class="cart-info table-responsive">
             @if (empty($products))
                 <div class="alert alert-light text-center" role="alert">

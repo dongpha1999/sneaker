@@ -9,6 +9,18 @@
                 <h1 class="page-header">Sản phẩm
                     <small>Sửa</small>
                 </h1>
+                @if(Session::has('invalid'))
+                <div class="alert alert-danger alert-dismissible">
+                     <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                     {{Session::get('invalid')}}
+                </div>
+           @endif
+           @if(Session::has('success'))
+                <div class="alert alert-success alert-dismissible">
+                     <a class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                     {{Session::get('success')}}
+                </div>
+           @endif
                 <form action="{{ route('product.edit',['id' => $product['id']]) }}" method="POST" enctype="multipart/form-data">
 
                     @csrf
@@ -57,6 +69,12 @@
                             @endforeach
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="image">Chọn hình ảnh</label>
+                        <input id="image" type="file" name="image">
+                    </div>
+                    <img src="{{ asset('storage/images/products/'.$product['image_path']) }}" width=80 height=80>
+                    <br /><br />
                     <button type="submit" class="btn btn-primary">Sửa</button>
                   </form>
             </div>

@@ -34,9 +34,12 @@
                     </tr>
                 </thead>
                 <tbody align="center">
+                    @php
+                        $count = 1;
+                    @endphp
                     @foreach ($brands as $brand)
                         <tr>
-                            <td>{{ $brand['id'] }}</td>
+                            <td>{{ $count }}</td>
                             <td><img src="{{ asset('storage/images/brands/'.$brand['img_path']) }}" width=60px ></td>
                             <td>{{ $brand['name'] }}</td>
                             <td>
@@ -47,25 +50,15 @@
                                 @endif
                             </td>
                             <td>
-                                <a data-href="{{ route('brand.delete',['id'=>$brand['id']]) }}" data-target="#confirm-delete" data-toggle="modal"><i class="fa fa-times" aria-hidden="true"></i></a>
-                                <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-body">
-                                                Bạn có chắc chắn sẽ muốn xóa thương hiệu này ?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a class="btn btn-danger btn-ok">Xóa</a>
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <a href="{{ route('brand.delete',['id'=>$brand['id']]) }}" onclick="return confirm('Bạn có muốn xóa thương hiệu này ?');"><i class="fa fa-times" aria-hidden="true"></i></a>
                                 <a href="{{ route('brand.edit.form',['id'=>$brand['id']]) }}" style="margin:0 1rem;"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                 <a href="{{ route('brand.disable',['id'=>$brand['id']]) }}" style="margin-right:1rem;"><i class="fa fa-ban" aria-hidden="true"></i></a>
                                 <a href="{{ route('brand.enable',['id'=>$brand['id']]) }}"><i class="fa fa-check-square" aria-hidden="true"></i></i></a>
                             </td>
                         </tr>
+                        @php
+                            $count++;
+                        @endphp
                     @endforeach
                 </tbody>
             </table>
