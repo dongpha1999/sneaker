@@ -15,7 +15,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = DB::select('select o.order_code,o.status,c.username,sum(o.price) total_money from orders o,customers c
+        $orders = DB::select('select o.order_code,o.status,c.username,c.phone,o.created_at,sum(o.price) total_money from orders o,customers c
         where o.customer_id = c.id group by o.order_code');
         return view('admin.orders.listOrder',['orders'=>$orders]);
     }

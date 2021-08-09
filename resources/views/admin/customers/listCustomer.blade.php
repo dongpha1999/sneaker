@@ -31,9 +31,7 @@
                         <th>Email</th>
                         <th>Số điện thoại</th>
                         <th>Giới tính</th>
-                        <th>Thành phố/Tỉnh</th>
-                        <th>Quận/Huyện</th>
-                        <th>Xã/Phường</th>
+                        <th>Ngày đăng ký</th>
                         <th>Trạng thái</th>
                         <th>Xóa</th>
                     </tr>
@@ -49,9 +47,7 @@
                                 <td>{{ $customer['email'] }}</td>
                                 <td>{{ $customer['phone'] }}</td>
                                 <td>{{ $customer['sex'] }}</td>
-                                <td>{{ $customer['city_id'] }}</td>
-                                <td>{{ $customer['district_id'] }}</td>
-                                <td>{{ $customer['ward_id'] }}</td>
+                                <td>{{ date('d-m-Y',strtotime($customer['created_at'])) }}</td>
                                 <td>{{ $customer['status'] === 1 ? "Hoạt động":"Không hoạt động" }}</td>
                                 <td>
                                     <a href="{{ route('customer.delete',['id'=>$customer['id']]) }}" onclick="return confirm('Bạn có muốn xóa khách hàng này ?');"><i class="fa fa-times" aria-hidden="true"></i></a>

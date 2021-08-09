@@ -28,19 +28,20 @@
                         <tr align="center">
                             <th>Mã đơn hàng</th>
                             <th>Khách hàng</th>
+                            <th>Số điện thoại</th>
+                            <th>Ngày đặt hàng</th>
                             <th>Tổng tiền</th>
                             <th>Trạng thái</th>
                             <th>Chức năng</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @php
-                            $count = 1;
-                        @endphp
                         @foreach ($orders as $row)
                             <tr>
-                                <td>{{ $count }}</td>
+                                <td>{{ $row->order_code }}</td>
                                 <td>{{ $row->username }}</td>
+                                <td>{{ $row->phone }}</td>
+                                <td>{{ date('d-m-Y',strtotime($row->created_at)) }}</td>
                                 <td>{{ $row->total_money }}</td>
                                 <td>
                                     @if ($row->status === 0)
@@ -57,9 +58,6 @@
                                     <a href="{{ route('order.see',['code' => $row->order_code]) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                                 </td>
                             </tr>
-                            @php
-                                $count++;
-                            @endphp
                         @endforeach
                     </tbody>
                 </table>

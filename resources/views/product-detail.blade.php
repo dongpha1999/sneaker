@@ -27,8 +27,8 @@
                 <ul class="list-group mb-5">
                     <li class="list-group-item">Gọi điện thoại
                         <b class="color-pink">089 810 3236</b> để mua hàng</li>
-                    <li class="list-group-item">Mua tại cửa hàng Phone Store:
-                        <b class="color-pink">Hà Nội</b></li>
+                    <li class="list-group-item">Mua tại cửa hàng Sneaker:
+                        <b class="color-pink">TP.HCM</b></li>
                     <li class="list-group-item">Mua sỉ/buôn xin gọi
                         <b>0899 10 32 36</b> để được hỗ trợ</li>
                 </ul>
