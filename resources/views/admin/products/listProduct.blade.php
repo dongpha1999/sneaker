@@ -52,7 +52,7 @@
                             <td>{{ $product->price }}</td>
                             <td>{{ $product->cate_title }}</td>
                             <td>{{ $product->brand_name }}</td>
-                            <td>{{ $product->quantity }}</td>
+                            <td>{{ $product->quantity > 0 ? $product->quantity : 0 }}</td>
                             <td>
                                 @php
                                     if($product->quantity > 0){
